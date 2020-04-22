@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from "@material-ui/core/AppBar";
 import Home from "@material-ui/icons/Home";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
@@ -6,7 +7,7 @@ import Apps from "@material-ui/icons/Apps";
 import ContactMail from "@material-ui/icons/ContactMail";
 import Avatar from "@material-ui/core/Avatar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import ArrowBack from "@material-ui/icons/ArrowBack";
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -19,7 +20,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-const drawerWidth = 250;
+const drawerWidth = 200;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     },
     AppBar: {
         [theme.breakpoints.up("sm")]: {
-            width: `calc(100%-${drawerWidth}px)`,
+            width: `calc(100%-${drawerWidth}%)`,
             marginLeft: drawerWidth
         },
         background: "#222"
@@ -60,19 +61,23 @@ const useStyles = makeStyles(theme => ({
 const menuLinks = [
     {
         listIcon: <Home></Home>,
-        listText: "Home"
+        listText: "Home",
+        path: "/"
     },
     {
         listIcon: <AssignmentInd></AssignmentInd>,
-        listText: "Resume"
+        listText: "Resume",
+        path: "/resume"
     },
     {
         listIcon: <Apps></Apps>,
-        listText: "Portfolio"
+        listText: "Portfolio",
+        path: "/portfolio"
     },
     {
         listIcon: <ContactMail></ContactMail>,
-        listText: "Contact"
+        listText: "Contact",
+        path: "/contact"
     }
 ]
 
@@ -91,10 +96,11 @@ const Navbar = (props) => {
     const drawer = (
         <div>
             <Avatar className={classes.avatar} style={{ background:  "#AC8408" }}>MC</Avatar>
-            <Divider></Divider>
+            <br/>
+            <Divider style={{ background: "#AC8408"}}></Divider>
             <List>
                 {menuLinks.map((menuItem, index) => (
-                    <ListItem button key={{index}}>
+                    <ListItem button key={{index}} component={Link} to={menuItem.path}>
                         <ListItemIcon style={{ color: "#AC8408" }}>{menuItem.listIcon}</ListItemIcon>
                         <ListItemText style={{ color: "#AC8408" }} primary={menuItem.listText}></ListItemText>
                     </ListItem>
@@ -109,9 +115,10 @@ const Navbar = (props) => {
             <AppBar position="static" className={classes.AppBar}>
                 <Toolbar>
                     <IconButton onClick={handleDrawerToggle} className={classes.menuButton}>
-                        <ArrowBack style={{ color: "#AC8408" }}></ArrowBack>
+                        {/*<ArrowBack style={{ color: "#AC8408" }}></ArrowBack>*/}
+                        <MenuRoundedIcon style={{ color: "#AC8408" }} />
                     </IconButton>
-                    <Typography variant="h5" style={{ color: "#AC8408" }}>Portfolio</Typography>
+                    <Typography variant="h5" style={{ color: "#AC8408" }}>Mathew Charath</Typography>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer}>
