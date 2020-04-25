@@ -10,7 +10,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -28,28 +27,25 @@ const useStyles = makeStyles(theme => ({
     },
     avatar: {
         fontSize: 40,
-        margin: "0.25rem auto",
-        width: theme.spacing(13),
-        height: theme.spacing(13)
-    },
-    drawer: {
-        [theme.breakpoints.up("sm")]: {
-            width: drawerWidth,
-            flexShrink: 0
-        }
+        margin: "auto",
+        width: theme.spacing(12),
+        height: theme.spacing(12)
     },
     AppBar: {
         [theme.breakpoints.up("sm")]: {
             width: `calc(100%-${drawerWidth}%)`,
-            marginLeft: drawerWidth
+            marginLeft: "none",
         },
-        background: "#222"
+        [theme.breakpoints.down("sm")]: {
+            marginLeft: "none"
+        },
+        boxSizing: "border-box",
+        background: "transparent",
+        boxShadow: "none"
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        [theme.breakpoints.up("sm")]: {
-            display: "none"
-        }
+        color: "#AC8408"
     },
     drawerPaper: {
         width: drawerWidth,
@@ -116,31 +112,21 @@ const Navbar = (props) => {
                 <Toolbar>
                     <IconButton onClick={handleDrawerToggle} className={classes.menuButton}>
                         {/*<ArrowBack style={{ color: "#AC8408" }}></ArrowBack>*/}
-                        <MenuRoundedIcon style={{ color: "#AC8408" }} />
+                        <MenuRoundedIcon />
                     </IconButton>
                     <Typography variant="h5" style={{ color: "#AC8408" }}>Mathew Charath</Typography>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer}>
-                <Hidden smUp>
-                    <Drawer 
-                     container={container}
-                     variant="temporary"
-                     open={mobileOpen} 
-                     onClose={handleDrawerToggle}
-                     classes={{ paper: classes.drawerPaper }}
-                     ModalProps={{ keepMounted: true }}>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-                <Hidden xsDown>
-                    <Drawer
-                     classes={{ paper: classes.drawerPaper }}
-                     variant="permanent"
-                     open>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
+                <Drawer 
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen} 
+                    onClose={handleDrawerToggle}
+                    classes={{ paper: classes.drawerPaper }}
+                    ModalProps={{ keepMounted: true }}>
+                    {drawer}
+                </Drawer>
             </nav>
         </div>
     )

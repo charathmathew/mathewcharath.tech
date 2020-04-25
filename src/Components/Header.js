@@ -7,12 +7,14 @@ import Grid from "@material-ui/core/Grid";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
+    rootContainer:{
+    },
     root:{
         position: "absolute",
         top: "45.5%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: "100vw",
+        width: "100%",
         textAlign: "center"
     },
     avatar: {
@@ -22,7 +24,8 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     title: {
-        color: "white"
+        color: "white",
+        width: "100%"
     },
     subtitle: {
         color: "white"
@@ -33,17 +36,19 @@ const useStyles = makeStyles(theme => ({
 const Header = () => {
     const classes = useStyles();
     return (
-        <Box className={classes.root}>
-            <Grid container justify="center">
-                <Avatar className={classes.avatar} style={{ background:  "#AC8408" }}>MC</Avatar>
-            </Grid>
-            <Typography className={classes.title} variant="h4">
-                Mathew Charath
-            </Typography>
-            <Typography className={classes.subtitle} variant="h5">
-                <Typed strings={["Web Development","Penetration Testing"]} typeSpeed={40} backSpeed={50} loop></Typed>
-            </Typography>
-        </Box>
+        <div className={classes.rootContainer}>
+            <Box className={classes.root}>
+                <Grid container justify="center">
+                    <Avatar className={classes.avatar} style={{ background:  "#AC8408" }}>MC</Avatar>
+                </Grid>
+                <Typography className={classes.title} variant="h4">
+                    Mathew Charath
+                </Typography>
+                <Typography className={classes.subtitle} variant="h5">
+                    <Typed strings={["Web Development","Penetration Testing"]} typeSpeed={40} backSpeed={50} loop></Typed>
+                </Typography>
+            </Box>
+        </div>
     )
 ;
 }
