@@ -24,21 +24,21 @@ const Home = () => {
                 params={{
                     particles: {
                         number: {
-                            value: 200,
+                            value: 100,
                             density:{
                                 enable: true,
-                                value_area: 800
+                                value_area: 900
                             }
                         },
                         color:{
                             value: "#222"
                         },
                         move:{
-                            speed: 4.0,
-                            straight: true
+                            speed: 3.0,
+                            straight: false
                         },
                         line_linked:{
-                            opacity: 0,
+                            opacity: 0.1,
                             color: "#AC8408"
                         }
                     },

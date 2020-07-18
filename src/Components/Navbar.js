@@ -67,7 +67,7 @@ const menuLinks = [
     },
     {
         listIcon: <Apps></Apps>,
-        listText: "Portfolio",
+        listText: "Projects",
         path: "/portfolio"
     },
     {

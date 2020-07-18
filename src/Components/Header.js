@@ -45,7 +45,7 @@ const Header = () => {
                     Mathew Charath
                 </Typography>
                 <Typography className={classes.subtitle} variant="h5">
-                    <Typed strings={["Web Development","Penetration Testing"]} typeSpeed={40} backSpeed={50} loop></Typed>
+                    <Typed strings={["Full Stack Web Development", "React", "Vue", "Bootstrap","Git","System Security"]} typeSpeed={40} backSpeed={50} loop></Typed>
                 </Typography>
             </Box>
         </div>
