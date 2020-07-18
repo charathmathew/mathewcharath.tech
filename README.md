@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is my portfolio website. Made using React.js and MaterialUI. 
 
 
-[mathewcharath.tech](mathewcharath.tech)
+[mathewcharath.tech](https://mathewcharath.tech)
 
 
 ## Available Scripts
