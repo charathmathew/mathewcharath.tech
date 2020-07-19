@@ -25,10 +25,16 @@ const useStyles = makeStyles({
         height: "100%"
     },
     cardContainer: {
-        maxWidth: "320",
+        maxWidth: "500",
         margin: "5rem 20rem",
         backgroundColor: "#222",
         borderColor: "#AC8408"
+    },
+    '@media (max-width: 600px)': {
+        cardContainer:{
+            maxWidth: "300",
+            margin: "5rem"
+        }
     }
 })
 

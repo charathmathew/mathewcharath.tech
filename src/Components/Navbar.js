@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     avatar: {
         fontSize: 40,
         margin: "auto",
+        marginTop: "10%",
         width: theme.spacing(12),
         height: theme.spacing(12)
     },
@@ -62,8 +63,8 @@ const menuLinks = [
     },
     {
         listIcon: <AssignmentInd></AssignmentInd>,
-        listText: "Resume",
-        path: "/resume"
+        listText: "About",
+        path: "/about"
     },
     {
         listIcon: <Apps></Apps>,
