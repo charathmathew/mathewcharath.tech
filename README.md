@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is my portfolio website. Made using React.js and MaterialUI. 
+This is my personal website made using React.js and MaterialUI. This website is meant to be a professional portfolio and a showcase of a few projects I have done. 
 
 
 [mathewcharath.tech](https://mathewcharath.tech)
