@@ -41,6 +41,19 @@ const useStyles = makeStyles(theme => ({
     },
     divider: {
         background: "#AC8408"
+    },
+    '@media (max-width: 450px)': {
+        form:{
+            top: "40%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            position: "absolute"
+        },
+        cardContainer: {
+            marginTop: "2rem",
+            backgroundColor: "#222",
+            borderColor: "#AC8408"
+        },
     }
 }))
 const Contact = () => {
@@ -53,17 +66,17 @@ const Contact = () => {
             <Grid container justify="center">
                 <Box component="form" className={classes.form}>
                     <Typography className={classes.title} variant="h4">LET'S CONNECT!</Typography>
+                    <Divider className={classes.divider} />
                     <br />
-                    <Typography className={classes.title} variant="body1">My Email address, GitHub and LinkedIn profiles are listed below. Feel free to get in touch.</Typography>
+                    <Typography className={classes.title} style={{ marginTop: "2rem" }} variant="body1">My Email address, GitHub and LinkedIn profiles are listed below. Feel free to get in touch.</Typography>
                     <br />
-                    <Divider />
                     <Card className={classes.cardContainer} variant="outlined">
                         <CardContent>
                             <Button className={classes.contactInfo} onClick={() => { window.location.href='mailto:charathmathew@gmail.com'; }} fullWidth={true} startIcon={<EmailIcon />}>charathmathew@gmail.com</Button>
                             <Divider className={classes.divider} />
-                            <Button className={classes.contactInfo} onClick={() => { window.location.href='https://github.com/charathmathew/'; }} fullWidth={true} startIcon={<GitHubIcon />}>charathmathew</Button>
+                            <Button className={classes.contactInfo} onClick={() => { window.open('https://github.com/charathmathew/','_blank') }} fullWidth={true} startIcon={<GitHubIcon />}>charathmathew</Button>
                             <Divider className={classes.divider} />
-                            <Button className={classes.contactInfo} onClick={() => { window.location.href='http://linkedin.com/in/mathew-charath/' }} fullWidth={true} startIcon={<LinkedInIcon />}>Mathew Charath</Button>
+                            <Button className={classes.contactInfo} onClick={() => { window.open('http://linkedin.com/in/mathew-charath/', '_blank') }} fullWidth={true} startIcon={<LinkedInIcon />}>Mathew Charath</Button>
                         </CardContent>
                     </Card>
                 </Box>
