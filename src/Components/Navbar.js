@@ -55,16 +55,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+/*{
+    listIcon: <AssignmentInd></AssignmentInd>,
+    listText: "About",
+    path: "/about"
+}*/
+
 const menuLinks = [
     {
         listIcon: <Home></Home>,
         listText: "Home",
         path: "/"
-    },
-    {
-        listIcon: <AssignmentInd></AssignmentInd>,
-        listText: "About",
-        path: "/about"
     },
     {
         listIcon: <Apps></Apps>,
