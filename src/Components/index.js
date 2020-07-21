@@ -18,8 +18,8 @@ const Home = () => {
     const classes = useStyles();
 
     return (
-        <div>
-            <Navbar></Navbar>           
+        <div>          
+            <Navbar></Navbar>
             <Particles canvasClassName={classes.canvas}
                 params={{
                     particles: {
@@ -63,7 +63,7 @@ const Home = () => {
                     }
                 }}
             />
-            <Header></Header>
+            <Header></Header> 
         </div>
     )
 }
